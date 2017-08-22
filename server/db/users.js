@@ -8,7 +8,7 @@ module.exports = {
 }
 
 function createUser (username, password, conn) {
-  console.log("create user", {username, password});
+  console.log("hits create user", {username, password});
   const passwordHash = hash.generate(password)
   var db = conn || knex
   return db('users')

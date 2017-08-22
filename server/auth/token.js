@@ -6,6 +6,8 @@ var verifyJwt = require('express-jwt')
 function issue (req, res) {
   getUserByName(req.body.username, req.app.get('db'))
     .then(user => {
+      console.log({user});
+      console.log(process.env.JWT_SECRET);
       var token = createToken(user, process.env.JWT_SECRET)
       res.json({
         message: 'Authentication successful',

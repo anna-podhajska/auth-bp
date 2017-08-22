@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').load()
 
 var createServer = require('./server')
 var Knex = require('knex')
